@@ -9,10 +9,20 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/sureshkamat/Technique.git
+   git clone https://github.com/sureshkamat/techniqueassignment.git
    ```
 
-1. **Access the User Dashboard:**
+1. **Access the User Dashboard Backend:**
+   run command npm run start
+    ```bash
+   npm run start
+   ```
+2. **Access the User Dashboard Frontend:**
+goto Frontend Folder
+    ```bash
+   cd frontend
+   ```
+
    run command npm run start
     ```bash
    npm run start
@@ -24,7 +34,7 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 - CSS
 - JavaScript
 - React.js
-- [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) for mock backend data.
+- [JSONPlaceholder API] for mock backend data.
 
 
 ## Features
@@ -35,6 +45,7 @@ This project uses the JSONPlaceholder API for demonstration and testing purposes
 - Delete users.
 - Limit for the user list.
 - Pagination for the user list.
+- Filtering Data Based on Department.
 - Responsive design.
 
 
