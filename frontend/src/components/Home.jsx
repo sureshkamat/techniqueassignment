@@ -1,5 +1,5 @@
 
-import { Button, Spinner } from "@chakra-ui/react";
+import { Button, Center, Spinner } from "@chakra-ui/react";
 import BadgeIcon from '@mui/icons-material/Badge';
 import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
@@ -23,9 +23,9 @@ export const Home = () => {
         try {
             setLoading(true); // Set loading to true before making the API request
             setError(null);
-            let url = `http://localhost:8080/users?_page=${page}&_limit=${limit}`;
+            let url = `https://dbjsonlive.onrender.com/users?_page=${page}&_limit=${limit}`;
             if (category) {
-                url = `http://localhost:8080/users?_page=${page}&_limit=${limit}&department=${category}`
+                url = `https://dbjsonlive.onrender.com/users?_page=${page}&_limit=${limit}&department=${category}`
             }
             axios
                 .get(
@@ -52,9 +52,9 @@ export const Home = () => {
     }, [limit, page, category]);
 
     useEffect(() => {
-        let url = 'http://localhost:8080/users'
+        let url = 'https://dbjsonlive.onrender.com/users'
         if (category) {
-            url = `http://localhost:8080/users?department=${category}`
+            url = `https://dbjsonlive.onrender.com/users?department=${category}`
         }
         axios.get(
             url
@@ -63,7 +63,7 @@ export const Home = () => {
 
     const handleDelete = (id) => {
         try {
-            axios.delete(`http://localhost:8080/users/${id}`)
+            axios.delete(`https://dbjsonlive.onrender.com/users/${id}`)
                 .then((res) => { console.log(res); alert(`Id: ${id} Deleted Successfully`);getData(); })
                 .catch((err) => console.log.log(err))
         }
@@ -71,6 +71,7 @@ export const Home = () => {
             console.log('error while deleting')
         }
     }
+    
     return (
         <div>
             <div className="top">
@@ -85,9 +86,16 @@ export const Home = () => {
                     <option value=''>Department</option>
                     <option value='Services'>Services</option>
                     <option value='Marketing'>Marketing</option>
+                    <option value='Business Development'>Business Development</option>
+                    <option value='Support'>Support</option>
+                    <option value='Accounting'>Accounting</option>
+                    <option value='Product Management'>Product Management</option>
+                    <option value='Human Resources'>Human Resources</option>
                 </select>
                 
-            </div>
+            </div>{
+                data.length===0 && <h1>No Record Founds</h1>
+            }
             {error && <h1>{error}</h1>}
             {loading ? (<div className="loader">
                 <h1>Loading....</h1>
@@ -141,7 +149,7 @@ export const Home = () => {
                 <Button colorScheme='teal' variant='outline' >{page}</Button>
                 <Button colorScheme='teal' variant='outline'
                     onClick={() => setPage(page + 1)}
-                    isDisabled={page === Math.ceil(totalPage / limit)}
+                    isDisabled={page === Math.ceil(totalPage / limit) || data.length===0}
                 >
                     Next
                 </Button>
