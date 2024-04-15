@@ -172,26 +172,6 @@
       "phone": "215445",
       "department": "Services",
       "id": 18
-    },
-    {
-      "firstName": "satya",
-      "lastName": "singh",
-      "age": "12",
-      "gender": "Male",
-      "email": "satya@gmail.com",
-      "phone": "215445",
-      "department": "Services",
-      "id": 19
-    },
-    {
-      "firstName": "satya",
-      "lastName": "singh",
-      "age": "12",
-      "gender": "Male",
-      "email": "satya@gmail.com",
-      "phone": "215445",
-      "department": "Services",
-      "id": 20
     }
   ]
 }
