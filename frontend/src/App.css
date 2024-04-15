@@ -1,0 +1,150 @@
+.App {
+  text-align: center;
+  
+}
+.nav{
+  display: flex;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-around;
+}
+h1 {
+  text-align: center;
+}
+.top {
+  margin-top: 100px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  }
+select {
+  font-size: 20px;
+}
+
+.box {
+  width: 80%;
+  margin: 20px;
+  display: grid;
+  gap: 10px;
+  margin: auto;
+  
+}
+.child {
+  margin-top: 10px;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 10px;
+}
+.child >img{
+  width: 150px;
+}
+.child:hover {
+  transform: translateY(-20px); /* Translate 20px in the y-direction (upwards) */
+}
+img {
+  width: 200px;
+  margin: 10px;
+}
+.buttonbox {
+  margin: 30px;
+  text-align: center;
+}
+.loader{
+  text-align: center;
+
+}
+button {
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  margin: 5px;
+}
+.edit{
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(21,128,141);
+}
+.edit:hover{
+  color: rgb(21,128,141);
+  background-color: white;
+}
+.delete{
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+.delete:hover{
+  color: red;
+  background-color: white;
+}
+.Add{
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+
+
+}
+.Add:hover{
+  color: green;
+  background-color: white;
+}
+@media screen and (min-width: 1200px) {
+  .box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  .box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .box {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  .TextD{
+    display: none;
+  }
+  .child {
+    width: 250px;
+    margin-left: 30px;
+  }
+}
+
+.addForm {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 100px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(54, 54, 59, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 5px;
+  padding: 20px;
+  gap: 10px;
+}
+input {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  border-width: 1px solid;
+}
+
+@media screen and (min-width: 600px){
+  .addForm{
+    width: 30%;
+  }
+}
