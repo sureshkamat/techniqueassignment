@@ -1,5 +1,5 @@
 
-import { Button, Center, Spinner } from "@chakra-ui/react";
+import { Button, Center, Spinner,Text } from "@chakra-ui/react";
 import BadgeIcon from '@mui/icons-material/Badge';
 import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
@@ -94,7 +94,7 @@ export const Home = () => {
                 </select>
                 
             </div>{
-                data.length===0 && <h1>No Record Founds</h1>
+                data.length===0 && <Center><Text fontSize='xl'>No Record Founds</Text></Center>
             }
             {error && <h1>{error}</h1>}
             {loading ? (<div className="loader">
