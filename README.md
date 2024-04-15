@@ -68,6 +68,12 @@ goto Frontend Folder
 
 
 
-## Deployed Link
+## Frontend Deployed Link
 
-The application is deployed and accessible [here](https://techniqueuserdashboard.netlify.app/).
+The application is deployed and accessible [here](https://techniqueuserassignment.netlify.app/).
+
+## Backend Deployed Link
+
+The application is deployed and accessible [here](https://dbjsonlive.onrender.com/).
+
+
