@@ -1,5 +1,5 @@
 
-import { Button, Center, Spinner,Text } from "@chakra-ui/react";
+import { Button, Center, Spinner, Text } from "@chakra-ui/react";
 import BadgeIcon from '@mui/icons-material/Badge';
 import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
@@ -8,6 +8,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useToast } from "./Toast";
 export const Home = () => {
     const [data, setData] = useState([]);
     const [limit, setLimit] = useState(4);
@@ -18,6 +19,7 @@ export const Home = () => {
     const [error, setError] = useState(null);
 
     const [totalPage, setTotalPage] = useState();
+    const triggerToast = useToast();
 
     const getData=()=>{
         try {
@@ -64,7 +66,15 @@ export const Home = () => {
     const handleDelete = (id) => {
         try {
             axios.delete(`https://dbjsonlive.onrender.com/users/${id}`)
-                .then((res) => { console.log(res); alert(`Id: ${id} Deleted Successfully`);getData(); })
+                .then((res) => { triggerToast({ 
+                    id,
+                    title: "Deleted",
+                    description: `Id: ${id} Deleted Successfully`,
+                    status: "success"
+                });
+                getData(); 
+                
+            })
                 .catch((err) => console.log.log(err))
         }
         catch (error) {
@@ -97,6 +107,7 @@ export const Home = () => {
                 data.length===0 && <Center><Text fontSize='xl'>No Record Founds</Text></Center>
             }
             {error && <h1>{error}</h1>}
+           
             {loading ? (<div className="loader">
                 <h1>Loading....</h1>
                 <Spinner
